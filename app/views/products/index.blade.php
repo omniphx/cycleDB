@@ -1,0 +1,1 @@
+/Users/mjmitchener/Sites/projects/bikexchange/app/views/products/index.blade.php

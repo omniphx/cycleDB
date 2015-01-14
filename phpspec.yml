@@ -1,0 +1,4 @@
+suites:
+ forrest_suits:
+  namespace: Omniphx\...
+  spec_prefix: spec

@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omniphx/boot",
+  "authors": [
+    "Matthew Mitchener <mattjmitchener@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.1.0"
+  }
+}
