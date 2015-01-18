@@ -7,14 +7,18 @@
 {{-- Content --}}
 @section('container')
 
-    <h1>BikeXchange</h1>
+    @foreach(array_chunk($categories->all(), 3) as $row)
+        <div class="row">
+            @foreach($row as $category)
+            <div class="col-md-4">
+                <h2>{{ $category->name }}</h2>
+                <ul>
+                    <li>{{$category->products()->first()->name}}</li>
+                </ul>
+            </div>
 
-    <ul>
-        <li>Search</li>
-        <li>Bikes</li>
-        <li>Area</li>
-        <li>Find Bikes</li>
-        <li>Average Price Ranges</li>
-    </ul>
+            @endforeach
+        </div>
+    @endforeach
 
 @stop

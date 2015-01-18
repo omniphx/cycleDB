@@ -9,6 +9,19 @@
 
 <h1>{{ $category->name }}</h1>
 
-@include('layouts.preview');
+{{$category->subcategories()->first()->name}}
+{{$subcategories->first()->name}}
+
+<ul>
+    @foreach ($subcategories as $subcategory)
+    <li>
+        {{ $subcategory->name }}
+    </li>
+    @endforeach
+</ul>
+
+
+
+@include('layouts.preview')
 
 @stop

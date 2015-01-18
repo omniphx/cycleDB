@@ -4,16 +4,27 @@ use Blog\Newsletters\NewsletterList;
 
 class HomeController extends BaseController {
 
-	/**
-	 * Inject the models.
-	 */
-	public function __construct() {
+    /**
+     * Category Model
+     * @var Category
+     */
+    protected $category;
 
-	}
+    /**
+     * Inject the models
+     * @param Category $category
+     * @param Type $type
+     */
+    public function __construct(Category $category)
+    {
+        $this->category = $category;
+    }
 
 	public function index()
 	{
-		return View::make('home.index');
+        $categories = $this->category->paginate(10);
+
+        return View::make('home.index', compact('categories'));
 	}
 
 }

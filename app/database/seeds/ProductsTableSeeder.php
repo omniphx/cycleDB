@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder {
                 'name' => $faker->word(),
                 'rating' => $faker->randomNumber(1,5),
                 'brand_id'    => $faker->randomNumber(1,10),
-                'category_id'    => $faker->randomNumber(1,10),
+                'subcategory_id'    => $faker->randomNumber(1,10),
                 'created_at' => $faker->dateTime($max = 'now')
 			]);
 		}

@@ -1,4 +1,4 @@
-<?php namespace CycleDB\Traits;
+<?php namespace Project\Traits;
 
 trait EloquentTrait {
 

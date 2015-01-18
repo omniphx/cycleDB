@@ -15,6 +15,8 @@ Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
 Route::resource('category', 'CategoriesController', array('only' => array('index', 'show')));
 
+Route::resource('subcategory', 'SubcategoriesController', array('only' => array('index', 'show')));
+
 Route::resource('brand', 'BrandsController', array('only' => array('index', 'show')));
 
 Route::resource('product', 'ProductsController', array('only' => array('index', 'show')));

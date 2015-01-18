@@ -1,39 +1,38 @@
 <?php
 
-class CategoriesController extends \BaseController {
+class SubcategoriesController extends \BaseController {
 
 	/**
-	 * Category Model
-	 * @var Category
+	 * Subcategory Model
+	 * @var Subcategory
 	 */
-	protected $category;
+	protected $subcategory;
 
 	/**
 	 * Inject the models
-	 * @param Category $category
-	 * @param Type $type
+	 * @param Subcategory $subcategory
 	 */
-	public function __construct(Category $category)
+	public function __construct(Subcategory $subcategory)
 	{
-		$this->category = $category;
+		$this->subcategory = $subcategory;
 	}
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /categories
+	 * GET /subcategories
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$categories = $this->category->paginate(10);
+		$subcategories = $this->subcategory->paginate(10);
 
-		return View::make('categories.index', compact('categories'));
+		return View::make('subcategories.index', compact('subcategories'));
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /categories/create
+	 * GET /subcategories/create
 	 *
 	 * @return Response
 	 */
@@ -44,7 +43,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /categories
+	 * POST /subcategories
 	 *
 	 * @return Response
 	 */
@@ -55,23 +54,22 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /categories/{slug}
+	 * GET /subcategories/{slug}
 	 *
 	 * @param  string $slug
 	 * @return Response
 	 */
 	public function show($slug)
 	{
-		$category = $this->category->findSlug($slug);
-		$products = $category->products()->paginate(10);
-		$subcategories = $category->subcategories();
+		$subcategory = $this->subcategory->findSlug($slug);
+		$products = $subcategory->products()->paginate(10);
 
-		return View::make('categories.show', compact('category','products','subcategories'));
+		return View::make('subcategories.show', compact('subcategory','products'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /categories/{id}/edit
+	 * GET /subcategories/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -83,7 +81,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /categories/{id}
+	 * PUT /subcategories/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -95,7 +93,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /categories/{id}
+	 * DELETE /subcategories/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

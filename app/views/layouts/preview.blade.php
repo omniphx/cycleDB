@@ -11,7 +11,7 @@
     </div>
 </article>
 <hr/>
-<!-- End of product entry -->
+<!-- End of product entry for {{ $product->name }} -->
 @endforeach
 
 {{ $products->appends(Request::except('page'))->links() }}

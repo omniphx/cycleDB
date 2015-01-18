@@ -4,8 +4,8 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Project\Traits\EloquentTrait;
 
-class Product extends \Eloquent implements SluggableInterface {
-    
+class Subcategory extends \Eloquent implements SluggableInterface {
+
     use SluggableTrait;
     use EloquentTrait;
 
@@ -16,16 +16,13 @@ class Product extends \Eloquent implements SluggableInterface {
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function scopeSearch($query, $search)
+    public function category()
     {
-        return $query->where('name','LIKE',"%$search%");
-    }
-
-    public function category(){
         return $this->belongsTo('Category');
     }
 
-    public function brand(){
-        return $this->belongsTo('Brand');
+    public function products()
+    {
+        return $this->hasMany('Product');
     }
 }

@@ -2,7 +2,7 @@
 
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
-use CycleDB\Traits\EloquentTrait;
+use Project\Traits\EloquentTrait;
 
 class Category extends \Eloquent implements SluggableInterface {
 
@@ -16,9 +16,14 @@ class Category extends \Eloquent implements SluggableInterface {
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    public function subcategories()
+    {
+        return $this->hasMany('Subcategory');
+    }
+
     public function products()
     {
-        return $this->hasMany('Product');
+        return $this->hasManyThrough('Product','Subcategory');
     }
 
 }
