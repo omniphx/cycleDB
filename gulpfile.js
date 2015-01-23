@@ -35,6 +35,11 @@ gulp.task('concat-app', function() {
     .pipe(gulp.dest('./public/assets/scripts'));
 });
 
+gulp.task('copy-views', function(){
+    gulp.src('./app/frontend/views/**')
+        .pipe(gulp.dest('./public/assets/views/'));
+});
+
 gulp.task('uglify', function(){
   gulp.src(['./public/assets/scripts/*.js','!./public/assets/scripts/*.min.js'])
     .pipe(rename({suffix: '.min'}))
@@ -58,8 +63,10 @@ gulp.task('compress', function(){
 });
 
 gulp.task('watch', function(){
-	gulp.watch('./app/assets/styles/*.less', ['less']);
-	gulp.watch('./app/assets/scripts/*.js', ['concat-app']);
+	gulp.watch('./less/**/*.less', ['less']);
+  gulp.watch(['./app/frontend/**/*.js','!./app/frontend/modules/**/*'], ['concat-app']);
+  gulp.watch('./app/frontend/modules/**/*.js', ['concat-modules']);
+  gulp.watch('./app/frontend/views/**/*.html',['copy-views']);
 });
 
 gulp.task('default', ['concat-libraries','concat-modules','concat-app','less','watch']);
