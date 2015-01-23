@@ -11,15 +11,15 @@
 	},
 	"autoload": {
 		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/models",
-			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"app/backend/commands",
+			"app/backend/controllers",
+			"app/backend/models",
+			"app/backend/database/migrations",
+			"app/backend/database/seeds",
+			"app/backend/tests/TestCase.php"
 		],
 		"psr-4": {
-			"Project\\": "app/Project"
+			"Project\\": "app/backend/Project"
 		}
 	},
 	"scripts": {

@@ -7,9 +7,8 @@
     <base href="/">
     @yield('title')
 
-    <!-- Bootstrap -->
-    {{ HTML::style(asset('assets/styles/styles.css')) }}
-    {{ HTML::script(asset('assets/scripts/built.js')) }}
+    {{ HTML::style(asset('assets/styles/styles.min.css')) }}
+    {{ HTML::script(asset('assets/scripts/libraries.min.js')) }}
     {{ HTML::script(asset('assets/scripts/modules.js')) }}
     {{ HTML::script(asset('assets/scripts/app.js')) }}
 
