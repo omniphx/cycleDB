@@ -8,7 +8,7 @@ class StringHelperServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'stringhelper',
-			'Blog\Helpers\StringHelper'
+			'Project\Helpers\StringHelper'
 		);
 	}
 

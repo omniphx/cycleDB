@@ -3,37 +3,19 @@
 class CategoriesController extends \BaseController {
 
 	/**
-	 * Category Model
-	 * @var Category
-	 */
-	protected $category;
-
-	/**
-	 * Inject the models
-	 * @param Category $category
-	 * @param Type $type
-	 */
-	public function __construct(Category $category)
-	{
-		$this->category = $category;
-	}
-
-	/**
 	 * Display a listing of the resource.
-	 * GET /categories
+	 * GET /products
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$categories = $this->category->paginate(10);
-
-		return View::make('categories.index', compact('categories'));
+		return $this->category->with('subcategories')->get();
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /categories/create
+	 * GET /products/create
 	 *
 	 * @return Response
 	 */
@@ -44,7 +26,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /categories
+	 * POST /products
 	 *
 	 * @return Response
 	 */
@@ -55,23 +37,21 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /categories/{slug}
+	 * GET /products/{id}
 	 *
-	 * @param  string $slug
+	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($slug)
 	{
-		$category = $this->category->findSlug($slug);
-		$products = $category->products()->paginate(10);
-		$subcategories = $category->subcategories();
-
-		return View::make('categories.show', compact('category','products','subcategories'));
+		return $this->category
+			->with(['products.brand','products.subcategory'])
+			->findSlug($slug);
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /categories/{id}/edit
+	 * GET /products/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -83,7 +63,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /categories/{id}
+	 * PUT /products/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -95,7 +75,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /categories/{id}
+	 * DELETE /products/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

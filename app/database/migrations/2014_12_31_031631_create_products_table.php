@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration {
 			$table->string('name');
 			$table->string('slug')->nullable();
 			$table->integer('rating');
+			$table->integer('part_number');
+			$table->integer('msrp');
 			$table->integer('brand_id')->unsigned();
 			$table->foreign('brand_id')->references('id')->on('brands');
 			$table->integer('subcategory_id')->unsigned();

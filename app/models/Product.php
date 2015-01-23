@@ -21,11 +21,15 @@ class Product extends \Eloquent implements SluggableInterface {
         return $query->where('name','LIKE',"%$search%");
     }
 
-    public function category(){
-        return $this->belongsTo('Category');
+    public function subcategory(){
+        return $this->belongsTo('Subcategory');
     }
 
     public function brand(){
+        return $this->belongsTo('Brand');
+    }
+
+    public function category(){
         return $this->belongsTo('Brand');
     }
 }

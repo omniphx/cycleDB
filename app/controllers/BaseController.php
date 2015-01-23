@@ -3,14 +3,21 @@
 class BaseController extends Controller {
 
     /**
+     * Category Model
+     * @var Category
+     */
+    protected $category;
+
+    /**
      * Initializer.
      *
      * @access   public
      * @return \BaseController
      */
-    public function __construct()
+    public function __construct(Category $category)
     {
         $this->beforeFilter('csrf', array('on' => 'post'));
+        $this->category = $category;
     }
 
 	/**

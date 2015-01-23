@@ -8,13 +8,16 @@ class SubcategoriesController extends \BaseController {
 	 */
 	protected $subcategory;
 
+	protected $category;
+
 	/**
 	 * Inject the models
 	 * @param Subcategory $subcategory
 	 */
-	public function __construct(Subcategory $subcategory)
+	public function __construct(Subcategory $subcategory, Category $category)
 	{
 		$this->subcategory = $subcategory;
+		$this->category = $category;
 	}
 
 	/**
@@ -25,9 +28,10 @@ class SubcategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
+		$categories = $this->category->get();
 		$subcategories = $this->subcategory->paginate(10);
 
-		return View::make('subcategories.index', compact('subcategories'));
+		return View::make('subcategories.index', compact('categories','subcategories'));
 	}
 
 	/**
@@ -61,10 +65,11 @@ class SubcategoriesController extends \BaseController {
 	 */
 	public function show($slug)
 	{
+		$categories = $this->category->get();
 		$subcategory = $this->subcategory->findSlug($slug);
-		$products = $subcategory->products()->paginate(10);
+		// $products = $subcategory->products()->paginate(10);
 
-		return View::make('subcategories.show', compact('subcategory','products'));
+		return View::make('subcategories.show', compact('categories','subcategory'));
 	}
 
 	/**

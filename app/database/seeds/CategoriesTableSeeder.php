@@ -9,12 +9,13 @@ class CategoriesTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 5) as $index)
-		{
-			Category::create([
-                'name' => $faker->word()
-			]);
-		}
+		Category::create(['name' => 'Cockpit']);
+		Category::create(['name' => 'Basics']);
+		Category::create(['name' => 'Seat']);
+		Category::create(['name' => 'Drivetrain']);
+		Category::create(['name' => 'Brakes & Wheels']);
+		Category::create(['name' => 'Other']);
+		Category::create(['name' => 'Bikes']);
 	}
 
 }

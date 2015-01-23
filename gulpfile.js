@@ -6,22 +6,27 @@ var	gulp      = require('gulp'),
 	uglify    = require('gulp-uglify'),
 	notify    = require('gulp-notify');
 
-gulp.task('angular-concat', function() {
+gulp.task('concat-modules', function() {
   gulp.src([
-  	'./bower_components/angular/angular.js',
-  	'./bower_components/angular-bootstrap/ui-bootstrap.js',
-  	'./bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-  	'./app/assets/scripts/*.js'])
-    .pipe(concat('built.js'))
+    './app/assets/scripts/modules.js'])
+    .pipe(concat('modules.js'))
+    .pipe(gulp.dest('./public/assets/scripts'));
+});
+
+gulp.task('concat-angular', function() {
+  gulp.src([
+    './app/assets/scripts/app.js'])
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('./public/assets/scripts'));
 });
 
 gulp.task('concat', function() {
   gulp.src([
+    './bower_components/jquery/dist/jquery.js',
+    './bower_components/bootstrap/dist/js/bootstrap.js',
     './bower_components/angular/angular.js',
-    './bower_components/angular-bootstrap/ui-bootstrap.js',
-    './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-    './app/assets/scripts/*.js'])
+    './bower_components/angular-route/angular-route.js',
+    './node_modules/lodash/dist/lodash.js'])
     .pipe(concat('built.js'))
     .pipe(gulp.dest('./public/assets/scripts'));
 });
@@ -50,9 +55,7 @@ gulp.task('compress', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('./app/assets/styles/*.less', ['less']);
-  gulp.watch('./app/assets/styles/*.less', ['compress']);
-	gulp.watch('./app/assets/scripts/extra.js', ['concat']);
-  gulp.watch('./app/assets/scripts/extra.js', ['uglify']);
+	gulp.watch('./app/assets/scripts/*.js', ['concat-angular']);
 });
 
-gulp.task('default', ['concat','less','uglify','compress','watch']);
+gulp.task('default', ['concat','concat-modules','concat-angular','less','watch']);

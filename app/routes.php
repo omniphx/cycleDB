@@ -13,10 +13,17 @@
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
-Route::resource('category', 'CategoriesController', array('only' => array('index', 'show')));
+// Route::resource('categories', 'CategoriesController', array('only' => array('index', 'show')));
 
-Route::resource('subcategory', 'SubcategoriesController', array('only' => array('index', 'show')));
+// Route::resource('subcategories', 'SubcategoriesController', array('only' => array('index', 'show')));
 
-Route::resource('brand', 'BrandsController', array('only' => array('index', 'show')));
+// Route::resource('brands', 'BrandsController', array('only' => array('index', 'show')));
 
-Route::resource('product', 'ProductsController', array('only' => array('index', 'show')));
+// Route::resource('products', 'ProductsController', array('only' => array('index', 'show')));
+
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('categories', 'CategoriesController');
+    Route::resource('products', 'ProductsAPIController');
+    Route::resource('brands', 'BrandsAPIController');
+});
