@@ -21,9 +21,9 @@ class Category extends \Eloquent implements SluggableInterface {
         return $this->hasMany('Subcategory');
     }
 
-    public function products()
+    public function components()
     {
-        return $this->hasManyThrough('Product','Subcategory');
+        return $this->hasManyThrough('Component','Subcategory');
     }
 
 }

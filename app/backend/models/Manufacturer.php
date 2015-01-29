@@ -4,7 +4,7 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Project\Traits\EloquentTrait;
 
-class Brand extends \Eloquent implements SluggableInterface {
+class Manufacturer extends \Eloquent implements SluggableInterface {
 
     use SluggableTrait;
     use EloquentTrait;
@@ -21,9 +21,9 @@ class Brand extends \Eloquent implements SluggableInterface {
         return $query->where('name','LIKE',"%$search%");
     }
 
-    public function products()
+    public function components()
     {
-        return $this->hasMany('Product');
+        return $this->hasMany('Component');
     }
     
 }

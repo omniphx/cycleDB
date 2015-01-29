@@ -123,8 +123,10 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Project\Helpers\StringHelperServiceProvider'
-		),
+		'Project\ServiceProviders\StringHelperServiceProvider',
+		'Project\ServiceProviders\CsvHandlerServiceProvider'
+		
+	),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -151,7 +153,7 @@ return array(
 	*/
 
 	'aliases' => array(
-
+		
 		'App'               => 'Illuminate\Support\Facades\App',
 		'Artisan'           => 'Illuminate\Support\Facades\Artisan',
 		'Auth'              => 'Illuminate\Support\Facades\Auth',
@@ -190,7 +192,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		'StringHelper'		=> 'Project\Facades\StringHelper'
+		'StringHelper'      => 'Project\Facades\StringHelper',
+		'CsvHandler'        => 'Project\Facades\CsvHandler'
 	),
 
 );

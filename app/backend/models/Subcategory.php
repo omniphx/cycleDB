@@ -21,8 +21,8 @@ class Subcategory extends \Eloquent implements SluggableInterface {
         return $this->belongsTo('Category');
     }
 
-    public function products()
+    public function components()
     {
-        return $this->hasMany('Product');
+        return $this->hasMany('Component');
     }
 }

@@ -1,0 +1,26 @@
+<div class="input-group">
+  <div class="input-group-addon">
+    <i class="fa fa-search"></i>
+  </div>
+  <input type="text" class="form-control" placeholder="Search" ng-model="searchText">
+</div>
+
+<br />
+
+<table class="table table-bordered">
+  <tr>
+    <th>Name</th>
+    <th>Brand</th>
+    <th>Subcategory</th>
+    <th>Price</th>
+    <th>Rating</th>
+  </tr>
+    <tr ng-repeat="component in components | filter:searchText | orderBy:name">
+      <td>{{ component.name }}</td>
+      <td>{{ component.brand.name }}</td>
+      <td>{{ component.subcategory.name }}</td>
+      <td>{{ component.msrp }}</td>
+      <td>{{ component.rating }}</td>
+    </tr>
+  <!-- End of component entry for {{ component.name }} -->
+</table>

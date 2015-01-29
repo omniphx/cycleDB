@@ -1,0 +1,14 @@
+<div class="row" ng-repeat="row in brandsChunked">
+  <div class="col-sm-3" ng-repeat="brand in row">
+    <div class="thumbnail">
+      <img src="http://placehold.it/300x300" alt="...">
+      <div class="caption">
+      <a href="#" ng-click="brandRoute(brand.slug)">
+        <h3>
+          {{brand.name}}
+        </h3>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>

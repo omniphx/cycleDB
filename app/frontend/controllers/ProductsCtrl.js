@@ -1,10 +1,10 @@
-app.controller('ProductsCtrl', ['$scope','$http', function($scope, $http){
+app.controller('ComponentsCtrl', ['$scope','$http', function($scope, $http){
 
-  $scope.products = [];
+  $scope.components = [];
 
-  $http.get('/api/products').
+  $http.get('/api/components').
     success(function(data, status, headers, config) {
-      $scope.products = data;
+      $scope.components = data;
     }).
     error(function(data, status, headers, config) {
       console.log(data);

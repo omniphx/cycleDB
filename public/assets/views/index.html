@@ -3,7 +3,7 @@
     <div class="thumbnail">
       <img src="http://placehold.it/300x300" alt="...">
       <div class="caption">
-      <a ng-click="categoryRoute(category.slug)">
+      <a href="#" ng-click="categoryRoute(category.slug)">
         <h3>
           {{category.name}}
         </h3>
@@ -11,7 +11,7 @@
       <hr>
       <ul class="list-unstyled">
         <li ng-repeat="subcategory in category.subcategories">
-          <a href="#">
+          <a href="#" ng-click="subcategoryRoute(subcategory.slug)">
             {{subcategory.name}}
           </a>
         </li>

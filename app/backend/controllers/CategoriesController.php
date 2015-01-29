@@ -4,7 +4,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /products
+	 * GET /categories
 	 *
 	 * @return Response
 	 */
@@ -15,7 +15,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /products/create
+	 * GET /categories/create
 	 *
 	 * @return Response
 	 */
@@ -26,7 +26,7 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /products
+	 * POST /categories
 	 *
 	 * @return Response
 	 */
@@ -37,50 +37,50 @@ class CategoriesController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /products/{id}
+	 * GET /categories/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
 	public function show($slug)
 	{
 		return $this->category
-			->with(['products.brand','products.subcategory'])
+			->with(['components.brand','components.subcategory'])
 			->findSlug($slug);
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /products/{id}/edit
+	 * GET /categories/{slug}/edit
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
 		//
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /products/{id}
+	 * PUT /categories/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /products/{id}
+	 * DELETE /categories/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
 		//
 	}

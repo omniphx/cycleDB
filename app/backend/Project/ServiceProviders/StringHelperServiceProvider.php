@@ -1,4 +1,4 @@
-<?php namespace Project\Helpers;
+<?php namespace Project\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
 

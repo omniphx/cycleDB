@@ -1,24 +1,29 @@
-app.controller('CategoriesCtrl', function($scope, $http, $location){
+var categoriesCtrl = app.controller('CategoriesCtrl', function($scope, $http, $location, loadCategories, arrayService){
 
-  $scope.categories = [];
-  $scope.categoriesChunked = [];
+  $scope.categories = loadCategories;
+  $scope.categoriesChunked = arrayService.arrayChunk(loadCategories,3);
 
   $scope.categoryRoute = function (category) {
     $location.path("/categories/"+category);
-  }
+  };
 
-
-  $http.get('/api/categories').
-    success(function(data, status, headers, config) {
-      $scope.categories = data;
-      var i,j,temp,chunk = 3;
-      for (i=0,j=data.length; i<j; i+=chunk) {
-          temp = data.slice(i,i+chunk);
-          $scope.categoriesChunked.push(temp);
-      }
-    }).
-    error(function(data, status, headers, config) {
-      console.log(data);
-    });
+  $scope.subcategoryRoute = function (subcategory) {
+    $location.path("/subcategories/"+subcategory);
+  };
 
 });
+
+categoriesCtrl.loadCategories = function($http, $q){
+
+  var defer = $q.defer();
+
+  $http.get('api/categories').
+    success(function(data, status, headers, config) {
+      defer.resolve(data);
+    }).
+    error(function(data, status, headers, config) {
+      defer.reject(status + data);
+    });
+
+  return defer.promise;
+};

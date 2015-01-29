@@ -7,7 +7,7 @@
     <base href="/">
     @yield('title')
 
-    {{ HTML::style(asset('assets/styles/styles.min.css')) }}
+    {{ HTML::style(asset('assets/styles/styles.css')) }}
     {{ HTML::script(asset('assets/scripts/libraries.min.js')) }}
     {{ HTML::script(asset('assets/scripts/modules.js')) }}
     {{ HTML::script(asset('assets/scripts/app.js')) }}
@@ -42,7 +42,5 @@
     @include('layouts.scripts.disqus')
 
 	</body>
-
-  {{ HTML::script(asset('assets/javascript/compress/built.js')) }}
 
 </html>

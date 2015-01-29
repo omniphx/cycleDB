@@ -1,16 +1,15 @@
-var categoryCtrl = app.controller('CategoryCtrl', function($scope, loadData){
+var categoryCtrl = app.controller('CategoryCtrl', function($scope, loadCategory){
 
-  $scope.category = loadData;
+  $scope.category = loadCategory;
 
-  $scope.products = loadData.products;
+  $scope.components = loadCategory.components;
 
 });
 
-categoryCtrl.loadData = function($http, $route, $q){
+categoryCtrl.loadCategory = function($http, $route, $q){
 
   var category = $route.current.params.category;
   var defer = $q.defer();
-
   $http.get('/api/categories/'+category).
     success(function(data, status, headers, config) {
       defer.resolve(data);
@@ -20,4 +19,4 @@ categoryCtrl.loadData = function($http, $route, $q){
     });
 
   return defer.promise;
-}
+};

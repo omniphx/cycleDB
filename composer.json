@@ -2,7 +2,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"jenssegers/mongodb": "2.*"
+		"jenssegers/mongodb": "2.*",
+		"goodby/csv": "*"
 	},
 	"require-dev": {
 		"way/generators": "2.*",

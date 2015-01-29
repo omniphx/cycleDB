@@ -1,36 +1,36 @@
 <?php
 
-class ProductsAPIController extends \BaseController {
+class BikesController extends \BaseController {
 
 	/**
-	 * Product Model
-	 * @var Product
+	 * Bike Model
+	 * @var Bike
 	 */
-	protected $product;
+	protected $bike;
 
 	/**
 	 * Inject the models
-	 * @param Product $product
+	 * @param Bike $bike
 	 */
-	public function __construct(Product $product)
+	public function __construct(Bike $bike)
 	{
-		$this->product = $product;
+		$this->bike = $bike;
 	}
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /products
+	 * GET /bikes
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return $this->product->with('brand','subcategory')->get();
+		return $this->bike->with('manufacturer','subcategory')->get();
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /products/create
+	 * GET /bikes/create
 	 *
 	 * @return Response
 	 */
@@ -41,7 +41,7 @@ class ProductsAPIController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /products
+	 * POST /bikes
 	 *
 	 * @return Response
 	 */
@@ -52,48 +52,48 @@ class ProductsAPIController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /products/{id}
+	 * GET /bikes/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
 		//
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /products/{id}/edit
+	 * GET /bikes/{slug}/edit
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
 		//
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /products/{id}
+	 * PUT /bikes/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /products/{id}
+	 * DELETE /bikes/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
 		//
 	}

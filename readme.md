@@ -1,7 +1,6 @@
-## bootstrap
+## cycleDB
 
-Bootstrap of my Laravel 4 configurations using composer, bower, npm and gulp to compile project.
-
+* Add Bike tab/resources
 
 ### To start developing
 

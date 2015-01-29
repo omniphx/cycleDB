@@ -15,7 +15,6 @@ class CategoriesTableSeeder extends Seeder {
 		Category::create(['name' => 'Drivetrain']);
 		Category::create(['name' => 'Brakes & Wheels']);
 		Category::create(['name' => 'Other']);
-		Category::create(['name' => 'Bikes']);
 	}
 
 }

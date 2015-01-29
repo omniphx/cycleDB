@@ -139,17 +139,17 @@ class SubcategoriesTableSeeder extends Seeder {
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Lever',
+            'name' => 'Front Lever',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Caliper',
+            'name' => 'Front Caliper',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Disc',
+            'name' => 'Front Disc',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);
@@ -159,17 +159,17 @@ class SubcategoriesTableSeeder extends Seeder {
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Lever',
+            'name' => 'Rear Lever',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Caliper',
+            'name' => 'Rear Caliper',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);
         Subcategory::create([
-            'name' => 'Disc',
+            'name' => 'Rear Disc',
             'category_id' => 5,
             'created_at' => $faker->dateTime($max = 'now')
         ]);

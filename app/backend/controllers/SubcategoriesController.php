@@ -8,16 +8,13 @@ class SubcategoriesController extends \BaseController {
 	 */
 	protected $subcategory;
 
-	protected $category;
-
 	/**
 	 * Inject the models
 	 * @param Subcategory $subcategory
 	 */
-	public function __construct(Subcategory $subcategory, Category $category)
+	public function __construct(Subcategory $subcategory)
 	{
 		$this->subcategory = $subcategory;
-		$this->category = $category;
 	}
 
 	/**
@@ -28,10 +25,7 @@ class SubcategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$categories = $this->category->get();
-		$subcategories = $this->subcategory->paginate(10);
-
-		return View::make('subcategories.index', compact('categories','subcategories'));
+		return $this->subcategory->get();
 	}
 
 	/**
@@ -65,45 +59,43 @@ class SubcategoriesController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		$categories = $this->category->get();
-		$subcategory = $this->subcategory->findSlug($slug);
-		// $products = $subcategory->products()->paginate(10);
-
-		return View::make('subcategories.show', compact('categories','subcategory'));
+		return $this->subcategory
+			->with(['components.brand','components.subcategory'])
+			->findSlug($slug);
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /subcategories/{id}/edit
+	 * GET /subcategories/{slug}/edit
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
 		//
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /subcategories/{id}
+	 * PUT /subcategories/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /subcategories/{id}
+	 * DELETE /subcategories/{slug}
 	 *
-	 * @param  int  $id
+	 * @param  string $slug
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
 		//
 	}

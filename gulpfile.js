@@ -1,4 +1,4 @@
-var	gulp      = require('gulp'),
+var	gulp    = require('gulp'),
 	minifyCSS = require('gulp-minify-css'),
 	less      = require('gulp-less'),
 	path      = require('path'),
@@ -29,8 +29,9 @@ gulp.task('concat-app', function() {
   gulp.src([
     './app/frontend/app.js',
     './app/frontend/config.js',
-    './app/frontend/controllers/*.js',
-    './app/frontend/directives/*.js'])
+    './app/frontend/services/**/*.js',
+    './app/frontend/controllers/**/*.js',
+    './app/frontend/directives/**/*.js'])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./public/assets/scripts'));
 });
@@ -44,11 +45,11 @@ gulp.task('uglify', function(){
   gulp.src(['./public/assets/scripts/*.js','!./public/assets/scripts/*.min.js'])
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('./public/assets/scripts/'))
+    .pipe(gulp.dest('./public/assets/scripts/'));
 });
 
 gulp.task('less', function () {
-  gulp.src('./app/assets/styles/styles.less')
+  gulp.src('./less/styles.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
@@ -59,7 +60,7 @@ gulp.task('compress', function(){
 	gulp.src(['./public/assets/styles/*.css','!./public/assets/styles/*.min.css'])
     .pipe(rename({suffix: '.min'}))
 		.pipe(minifyCSS())
-		.pipe(gulp.dest('./public/assets/styles/'))
+		.pipe(gulp.dest('./public/assets/styles/'));
 });
 
 gulp.task('watch', function(){
