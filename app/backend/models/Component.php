@@ -4,9 +4,9 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Project\Traits\EloquentTrait;
 
-class Component extends \Eloquent implements SluggableInterface {
+class Component extends \Eloquent {
 
-    use SluggableTrait;
+    // use SluggableTrait;
     use EloquentTrait;
 
     protected $sluggable = array(

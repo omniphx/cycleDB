@@ -1,7 +1,7 @@
-var brandsCtrl = app.controller('BrandsCtrl', function($scope, $http, $location, loadBrands, arrayService){
+var manufacturersCtrl = app.controller('ManufacturersCtrl', function($scope, $http, $location, loadManufacturers, arrayService){
 
-  $scope.brands = loadBrands;
-  $scope.brandsChunked = arrayService.arrayChunk(loadBrands,4);
+  $scope.manufacturers = loadManufacturers;
+  $scope.manufacturersChunked = arrayService.arrayChunk(loadManufacturers,4);
 
   $scope.categoryRoute = function (category) {
     $location.path("/categories/"+category);
@@ -11,17 +11,17 @@ var brandsCtrl = app.controller('BrandsCtrl', function($scope, $http, $location,
     $location.path("/subcategories/"+subcategory);
   };
 
-  $scope.brandRoute = function(brand) {
-    $location.path("/brands/"+brand);
+  $scope.manufacturerRoute = function(manufacturer) {
+    $location.path("/manufacturers/"+manufacturer);
   };
 
 });
 
-brandsCtrl.loadBrands = function($http, $q){
+manufacturersCtrl.loadManufacturers = function($http, $q){
 
   var defer = $q.defer();
 
-  $http.get('api/brands').
+  $http.get('api/manufacturers').
     success(function(data, status, headers, config) {
       defer.resolve(data);
     }).

@@ -29,6 +29,8 @@
   </head>
 	<body>
 
+    @yield('filter')
+
     @include('layouts.navbar')
 
     <div class="container">

@@ -18,6 +18,7 @@ class CreateComponentsTable extends Migration {
 			$table->string('slug')->nullable();
 			$table->integer('rating')->nullable();
 			$table->integer('msrp')->nullable();
+			$table->integer('year')->nullable();
 			$table->integer('manufacturer_id')->unsigned()->nullable();
 			$table->foreign('manufacturer_id')->references('id')->on('manufacturers');
 			$table->integer('subcategory_id')->unsigned()->nullable();

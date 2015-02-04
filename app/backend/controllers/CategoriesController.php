@@ -45,7 +45,7 @@ class CategoriesController extends \BaseController {
 	public function show($slug)
 	{
 		return $this->category
-			->with(['components.brand','components.subcategory'])
+			->with(['components.manufacturer','components.subcategory'])
 			->findSlug($slug);
 	}
 

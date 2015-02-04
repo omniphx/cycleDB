@@ -4,6 +4,11 @@
 <title>Home</title>
 @stop
 
+@section('filter')
+<div class="filter"></div>
+@stop
+
+
 {{-- Content --}}
 @section('container')
 

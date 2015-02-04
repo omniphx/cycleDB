@@ -1,20 +1,24 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
+class CategoriesTableSeeder extends BaseSeeder {
 
-class CategoriesTableSeeder extends Seeder {
+    public function __construct(Category $category)
+    {
+        $this->table = 'categories';
+        $this->model = $category;
+        $this->filename = app_path().'/database/seeds/csvs/categories.csv';
+    }
 
-	public function run()
-	{
-		$faker = Faker::create();
+    public function run()
+    {
+        // Recommended when importing larger CSVs
+        // DB::disableQueryLog();
 
-		Category::create(['name' => 'Cockpit']);
-		Category::create(['name' => 'Basics']);
-		Category::create(['name' => 'Seat']);
-		Category::create(['name' => 'Drivetrain']);
-		Category::create(['name' => 'Brakes & Wheels']);
-		Category::create(['name' => 'Other']);
-	}
+        // Uncomment the below to wipe the table clean before populating
+        DB::table($this->table)->truncate();
+
+
+        parent::run();
+    }
 
 }

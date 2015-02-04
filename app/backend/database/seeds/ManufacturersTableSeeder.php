@@ -3,20 +3,25 @@
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class ManufacturersTableSeeder extends Seeder {
+class ManufacturersTableSeeder extends BaseSeeder {
 
-	public function run()
-	{
-		$faker = Faker::create();
+    public function __construct(Manufacturer $manufacturer)
+    {
+        $this->table = 'manufacturers';
+        $this->model = $manufacturer;
+        $this->filename = app_path().'/database/seeds/csvs/manufacturers.csv';
+    }
 
-		foreach(range(1, 15) as $index)
-		{
-			Manufacturer::create([
-                'name' => $faker->word(),
-                'type' => $faker->word(),
-                'created_at' => $faker->dateTime($max = 'now')
-			]);
-		}
-	}
+    public function run()
+    {
+        // Recommended when importing larger CSVs
+        // DB::disableQueryLog();
+
+        // Uncomment the below to wipe the table clean before populating
+        DB::table($this->table)->truncate();
+
+
+        parent::run();
+    }
 
 }

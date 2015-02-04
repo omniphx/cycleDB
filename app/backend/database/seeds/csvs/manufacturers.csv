@@ -1,0 +1,74 @@
+Id,Name,Type
+1,Huffy,Department Store
+2,Iron Horse,Department Store
+3,Schwinn,Department Store
+4,Murray,Department Store
+5,Magna,Department Store
+6,Pacific,Department Store
+7,Kent,Department Store
+8,Mongoose,Department Store
+9,NEXT,Department Store
+10,Nishiki,Department Store
+11,Bianchi,Mass Manufacturers
+12,Cannondale,Mass Manufacturers
+13,Cube,Mass Manufacturers
+14,Diamondback,Mass Manufacturers
+15,Gary Fisher,Mass Manufacturers
+16,Giant,Mass Manufacturers
+17,GT,Mass Manufacturers
+18,Kona,Mass Manufacturers
+19,Felt,Mass Manufacturers
+20,Jamis,Mass Manufacturers
+21,Specialized,Mass Manufacturers
+22,Raleigh,Mass Manufacturers
+23,SCOTT,Mass Manufacturers
+24,Trek,Mass Manufacturers
+25,Devinci,Smaller National Brands
+26,Ibis,Smaller National Brands
+27,Fuji,Smaller National Brands
+28,Ellsworth,Smaller National Brands
+29,Haro,Smaller National Brands
+30,Motobecane,Smaller National Brands
+31,Yeti,Smaller National Brands
+32,Rocky Mountain,Smaller National Brands
+33,Santa Cruz,Smaller National Brands
+34,Salsa,Smaller National Brands
+35,On-One,Smaller National Brands
+36,Turner,Smaller National Brands
+37,Orbea,Smaller National Brands
+38,Niner,Smaller National Brands
+39,Novara,Smaller National Brands
+40,K2,Smaller National Brands
+41,KHS,Smaller National Brands
+42,Marin,Smaller National Brands
+43,Mongoose,Smaller National Brands
+44,Independent Fabrication,Boutique/Frame Makers
+45,Litespeed,Boutique/Frame Makers
+46,Lynskey,Boutique/Frame Makers
+47,Milwaukee Bicycle Co,Boutique/Frame Makers
+48,Merlin,Boutique/Frame Makers
+49,Moots,Boutique/Frame Makers
+50,Quiring,Boutique/Frame Makers
+51,SOMA,Boutique/Frame Makers
+52,Seven Cycles,Boutique/Frame Makers
+53,Van Dessel,Boutique/Frame Makers
+54,Surly,Boutique/Frame Makers
+55,CHUMBA,Boutique/Frame Makers
+56,Gunnar,Boutique/Frame Makers
+57,Montague,Boutique/Frame Makers
+58,Carrera,Foriegn Bikes
+59,BMC,Foriegn Bikes
+60,Dawes,Foriegn Bikes
+61,Focus,Foriegn Bikes
+62,Look,Foriegn Bikes
+63,Merida,Foriegn Bikes
+64,Planet X Bikes,Foriegn Bikes
+65,Litespeed,Titanium
+66,Lynskey,Titanium
+67,Merlin,Titanium
+68,Moots,Titanium
+69,Quiring,Titanium
+70,Seven Cycles,Titanium
+71,Milwaukee Bicycle Co,Fat Bike
+72,Surly,Fat Bike
+73,Defiance Cycle Company,Fat Bike

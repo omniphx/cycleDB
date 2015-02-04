@@ -60,7 +60,7 @@ class SubcategoriesController extends \BaseController {
 	public function show($slug)
 	{
 		return $this->subcategory
-			->with(['components.brand','components.subcategory'])
+			->with(['components.manufacturer','components.subcategory'])
 			->findSlug($slug);
 	}
 

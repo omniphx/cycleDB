@@ -4,21 +4,28 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider,$loca
       templateUrl: '/assets/views/index.html',
       controller: 'CategoriesCtrl',
       resolve: {
-        loadCategories : categoriesCtrl.loadCategories
+        loadCategories : function(apiService) {
+          return apiService.get('api/categories');
+        }
       }
     }).
     when('/categories', {
       templateUrl: '/assets/views/index.html',
       controller: 'CategoriesCtrl',
       resolve: {
-        loadCategories : categoriesCtrl.loadCategories
+        loadCategories : function(apiService) {
+          return apiService.get('api/categories');
+        }
       }
     }).
     when('/categories/:category', {
       templateUrl: '/assets/views/categories/show.html',
       controller: 'CategoryCtrl',
       resolve: {
-        loadCategory : categoryCtrl.loadCategory
+        loadCategory : function(apiService, $route) {
+          var category = $route.current.params.category;
+          return apiService.get('api/categories/'+category);
+        }
       }
     }).
     when('/subcategories', {
@@ -35,22 +42,33 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider,$loca
         loadSubcategory : subcategoryCtrl.loadSubcategory
       }
     }).
-    when('/brands', {
-      templateUrl: '/assets/views/brands/index.html',
-      controller: 'BrandsCtrl',
+    when('/manufacturers', {
+      templateUrl: '/assets/views/manufacturers/index.html',
+      controller: 'ManufacturersCtrl',
       resolve: {
-        loadBrands : brandsCtrl.loadBrands
+        loadManufacturers : manufacturersCtrl.loadManufacturers
       }
     }).
-    when('/brands/:brand', {
-      templateUrl: '/assets/views/brands/show.html',
-      controller: 'BrandCtrl',
+    when('/manufacturers/:manufacturer', {
+      templateUrl: '/assets/views/manufacturers/show.html',
+      controller: 'ManufacturerCtrl',
       resolve: {
-        loadBrand : brandCtrl.loadBrand
+        loadManufacturer : manufacturerCtrl.loadManufacturer
+      }
+    }).
+    when('/components', {
+      templateUrl: '/assets/views/components/index.html',
+      controller: 'ComponentCtrl',
+      resolve: {
+        loadComponents : componentsCtrl.loadComponents
       }
     }).
     otherwise({
-      redirectTo: '/categories'
+      templateUrl: '/assets/views/index.html',
+      controller: 'CategoriesCtrl',
+      resolve: {
+        loadCategories : categoriesCtrl.loadCategories
+      }
     });
 
     $locationProvider.html5Mode(true);

@@ -1,0 +1,14 @@
+<div class="row" ng-repeat="row in manufacturersChunked">
+  <div class="col-sm-3" ng-repeat="manufacturer in row">
+    <div class="thumbnail">
+      <img src="http://placehold.it/300x300" alt="...">
+      <div class="caption">
+      <a href="#" ng-click="manufacturerRoute(manufacturer.slug)">
+        <h3>
+          {{manufacturer.name}}
+        </h3>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('components', 'ComponentsController');
 });
 
-// Route::get('{any}', 'HomeController@index')->where('any', '.*');
+Route::get('{any}', 'HomeController@index')->where('any', '.*');
 
 Route::get('/test', function(){
     return CsvHandler::toArray('test.csv');

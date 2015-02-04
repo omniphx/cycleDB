@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-2">
+
+    <form class="form-inline">
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="text" class="form-control" placeholder="Search" ng-model="searchText">
+      </div>
+      <button type="button" class="btn btn-primary">Add filter</button>
+    </form>
+    
+    <div class="filter-container">
+      <div class="filter-box">Manufacturer=Trek</div>
+      <div class="filter-box">Filter2</div>
+      <div class="filter-box">Filter3</div>
+    </div>
+    <br />
+
+    <table class="table table-bordered">
+      <tr>
+        <th>
+          <a href="" ng-click="predicate='name'; reverse=!reverse">
+            NAME  <i class="fa fa-caret-up"></i>
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="predicate='manufacturer.name'; reverse=!reverse">
+            MANUFACTURER
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="predicate='subcategory.name'; reverse=!reverse">
+            SUBCATEGORY
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="predicate='msrp'; reverse=!reverse">
+            PRICE
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="predicate='rating'; reverse=!reverse">
+            RATING
+          </a>
+        </th>
+      </tr>
+        <tr ng-repeat="component in components | filter:searchText | orderBy:predicate:reverse">
+          <td>{{ component.name }}</td>
+          <td>{{ component.manufacturer.name }}</td>
+          <td>{{ component.subcategory.name }}</td>
+          <td>{{ component.msrp }}</td>
+          <td>{{ component.rating }}</td>
+        </tr>
+      <!-- End of component entry for {{ component.name }} -->
+    </table>
+  </div>
+
+
+</div>

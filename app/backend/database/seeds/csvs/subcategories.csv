@@ -1,0 +1,24 @@
+Id,Name,category_id
+1,Handlebars,1
+2,Stem,1
+3,Grips,1
+4,Bar Ends,1
+5,Right Shifter,1
+6,Left Shifter,1
+7,Headset,1
+8,Fork,2
+9,Frame,2
+10,Seat Collar,3
+11,Saddle,3
+12,Seatpost,3
+13,Bottom Bracket,4
+14,Crankset,4
+15,Pedals,4
+16,Front Derailleur,4
+17,Rear Derailleur,4
+18,Cassette,4
+19,Chain,4
+20,Front Wheel,5
+24,Rear Wheel,5
+28,Front Brake,5
+32,Rear Brake,5
