@@ -8,18 +8,3 @@ var subcategoriesCtrl = app.controller('SubcategoriesCtrl', function($scope, $ht
   };
 
 });
-
-subcategoriesCtrl.loadSubcategories = function($http, $q){
-
-  var defer = $q.defer();
-
-  $http.get('api/subcategories').
-    success(function(data, status, headers, config) {
-      defer.resolve(data);
-    }).
-    error(function(data, status, headers, config) {
-      defer.reject(status + data);
-    });
-
-  return defer.promise;
-};

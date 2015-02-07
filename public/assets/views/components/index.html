@@ -12,11 +12,8 @@
     </form>
     
     <div class="filter-container">
-      <div class="filter-box">Manufacturer=Trek</div>
-      <div class="filter-box">Filter2</div>
-      <div class="filter-box">Filter3</div>
+      <filter filters="filters" remove="removeFilter(filter)"></filter>
     </div>
-    <br />
 
     <table class="table table-bordered">
       <tr>
@@ -50,7 +47,7 @@
           <td>{{ component.name }}</td>
           <td>{{ component.manufacturer.name }}</td>
           <td>{{ component.subcategory.name }}</td>
-          <td>{{ component.msrp }}</td>
+          <td>{{ component.msrp | currency }}</td>
           <td>{{ component.rating }}</td>
         </tr>
       <!-- End of component entry for {{ component.name }} -->

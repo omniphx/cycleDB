@@ -138,8 +138,26 @@ footer {
 }
 
 .filter-container {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	.filter-box:first-child {
+		margin-left: 0px;
+	}
 	.filter-box {
 		display: inline-block;
 		color: gray;
+		padding: 2px;
+		margin: 3px;
+		border: 1px solid #CCC;
+		background-color: @gray-lighter;
+		border-radius: 5px;
+		.filter-content {
+			padding: 3px;
+		}
+		.close {
+			font-size: 15px;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
 	}
 }

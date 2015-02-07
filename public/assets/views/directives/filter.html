@@ -1,0 +1,8 @@
+<div class="filter-box" ng-repeat="filter in filters">
+  <div class="pull-left filter-content">
+    {{filter.column}}={{filter.criteria}}
+  </div>
+  <button type="button" class="close" aria-label="Close" ng-click="remove({filter:filter})">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
