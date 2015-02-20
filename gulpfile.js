@@ -13,6 +13,7 @@ gulp.task('concat-libraries', function() {
     './bower_components/bootstrap/dist/js/bootstrap.js',
     './bower_components/angular/angular.js',
     './bower_components/angular-route/angular-route.js',
+    './bower_components/ng-grid/build/ng-grid.js',
     './node_modules/lodash/dist/lodash.js'])
     .pipe(concat('libraries.js'))
     .pipe(gulp.dest('./public/assets/scripts'));
@@ -20,7 +21,7 @@ gulp.task('concat-libraries', function() {
 
 gulp.task('concat-modules', function() {
   gulp.src([
-    './app/frontend/modules/lodash.js'])
+    './app/frontend/modules/**/*.js'])
     .pipe(concat('modules.js'))
     .pipe(gulp.dest('./public/assets/scripts'));
 });
@@ -30,6 +31,7 @@ gulp.task('concat-app', function() {
     './app/frontend/app.js',
     './app/frontend/config.js',
     './app/frontend/services/**/*.js',
+    './app/frontend/filters/**/*.js',
     './app/frontend/controllers/**/*.js',
     './app/frontend/directives/**/*.js'])
     .pipe(concat('app.js'))

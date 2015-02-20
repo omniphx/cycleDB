@@ -19,6 +19,6 @@ Id,Name,category_id
 18,Cassette,4
 19,Chain,4
 20,Front Wheel,5
-24,Rear Wheel,5
-28,Front Brake,5
-32,Rear Brake,5
+21,Rear Wheel,5
+22,Front Brake,5
+23,Rear Brake,5

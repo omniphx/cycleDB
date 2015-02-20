@@ -22,6 +22,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('manufacturers', 'ManufacturersController');
     Route::resource('bikes', 'BikesController');
     Route::resource('components', 'ComponentsController');
+
 });
 
 Route::get('{any}', 'HomeController@index')->where('any', '.*');

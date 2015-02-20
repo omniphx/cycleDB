@@ -8,7 +8,7 @@
     @yield('title')
 
     {{ HTML::style(asset('assets/styles/styles.css')) }}
-    {{ HTML::script(asset('assets/scripts/libraries.min.js')) }}
+    {{ HTML::script(asset('assets/scripts/libraries.js')) }}
     {{ HTML::script(asset('assets/scripts/modules.js')) }}
     {{ HTML::script(asset('assets/scripts/app.js')) }}
 
@@ -18,13 +18,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script>
-      // Load this when the DOM is ready
-      $(function(){
-        $('.carousel').carousel()
-      });
-    </script>
 
   </head>
 	<body>

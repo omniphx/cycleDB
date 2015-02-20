@@ -1,1 +1,1 @@
-var app = angular.module('cycleDB', ['lodash','ngRoute']);
+var app = angular.module('cycleDB', ['lodash','ngRoute','ngGrid']);

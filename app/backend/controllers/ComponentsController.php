@@ -25,7 +25,7 @@ class ComponentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return $this->component->with('manufacturer','subcategory')->get();
+		return $this->component->with('manufacturer','subcategory','category')->get();
 	}
 
 	/**

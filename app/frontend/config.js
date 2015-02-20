@@ -18,32 +18,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider,$loca
         }
       }
     }).
-    when('/categories/:category', {
-      templateUrl: '/assets/views/categories/show.html',
-      controller: 'CategoryCtrl',
-      resolve: {
-        loadCategory : function(apiService, $route) {
-          var category = $route.current.params.category;
-          return apiService.get('api/categories/'+category);
-        }
-      }
-    }).
     when('/subcategories', {
       templateUrl: '/assets/views/subcategories/index.html',
       controller: 'SubcategoriesCtrl',
       resolve: {
         loadSubcategories : function(apiService) {
           return apiService.get('api/subcategories');
-        }
-      }
-    }).
-    when('/subcategories/:subcategory', {
-      templateUrl: '/assets/views/subcategories/show.html',
-      controller: 'SubcategoryCtrl',
-      resolve: {
-        loadSubcategory : function(apiService, $route) {
-          var subcategory = $route.current.params.subcategory;
-          return apiService.get('api/subcategories/'+subcategory);
         }
       }
     }).
@@ -54,18 +34,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider,$loca
         loadManufacturers : manufacturersCtrl.loadManufacturers
       }
     }).
-    when('/manufacturers/:manufacturer', {
-      templateUrl: '/assets/views/manufacturers/show.html',
-      controller: 'ManufacturerCtrl',
-      resolve: {
-        loadManufacturer : function(apiService, $route) {
-          var manufacturer = $route.current.params.manufacturer;
-          return apiService.get('api/manufacturers/'+manufacturer);
-        }
-      }
-    }).
     when('/components', {
-      templateUrl: '/assets/views/components/index.html',
+      templateUrl: '/assets/views/components/show.html',
       controller: 'ComponentsCtrl',
       resolve: {
         loadComponents :  function(apiService) {

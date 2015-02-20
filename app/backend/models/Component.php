@@ -21,6 +21,10 @@ class Component extends \Eloquent {
         return $query->where('name','LIKE',"%$search%");
     }
 
+    public function category(){
+        return $this->subcategory->category();
+    }
+
     public function subcategory(){
         return $this->belongsTo('Subcategory');
     }
